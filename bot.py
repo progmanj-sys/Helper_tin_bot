@@ -3,7 +3,9 @@ from telegram.ext import ApplicationBuilder, MessageHandler, filters, CallbackQu
 from gpt import *
 from util import *
 
-TOKEN = "8261509952:AAEu3UlFNfSl0Nocu4dsQK4TkiuqnfAhbfU"
+TOKEN = token = os.getenv("TELEGRAM_TOKEN")
+bot = Bot(token=token)
+
 async def start (update,context):
     dialog.mode="main"
     msg=load_message("main")
